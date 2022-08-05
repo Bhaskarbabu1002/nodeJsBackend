@@ -7,7 +7,7 @@ const ordersController = require('../controllers/ordersController');
 router.get('/', ordersController.orders_get_all);
 
 // Handle POST Request to orders
-router.post('/', checkAuth, ordersController.orders_create_all);
+router.post('/', ordersController.orders_create_all);
 
 // Handle Incoming GET Requests with ID to orders
  router.get('/:orderId', ordersController.orders_get_orderId);
