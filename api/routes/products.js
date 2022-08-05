@@ -36,6 +36,7 @@ const imageUpload = multer({
 }) 
 
  router.get('/' ,productsController.products_get_all);
+ router.get('/' ,productsController.products_get_all);
 
  router.post('/', imageUpload.single('image'), productsController.products_create_product);
 
