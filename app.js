@@ -39,9 +39,9 @@ app.use((req, res, next) => {
 
 
   // testing
-  app.get("/ping", (req, res) => {
-    res.send("PONG")
-  })
+  // app.get("/ping", (req, res) => {
+  //   res.send("PONG")
+  // })
 
 
 app.use ('/products',productRoutes);
