@@ -7,7 +7,9 @@ const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/userRoute');
 
 // Mongodb Connect
-mongoose.connect('mongodb://localhost:27017/TestApp', (err) => {
+mongoose.connect('mongodb+srv://BhaskarBabu:vYFuD67wa1lj8eCk@testcluster.7homggd.mongodb.net/?retryWrites=true&w=majority',{
+  dbName:'testapp'
+}, (err) => {
     if (!err) {
       console.log("Mongoose connected successfully");
     } else {
