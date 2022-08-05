@@ -187,10 +187,8 @@ const app = require ('./app');
 // app.listen(5000,()=>{
 //     console.log('Server is running...')
 // })
+
 const port = process.env.PORT || 4000;
 const server = http.createServer(app);
 server.listen(port);
 
-app.get("/", (req, res) => {
-    res.send("PONG")
-  })
