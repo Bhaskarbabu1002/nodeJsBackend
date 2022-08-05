@@ -37,6 +37,13 @@ app.use((req, res, next) => {
     next();
   });
 
+
+  // testing
+  app.get("/ping", (req, res) => {
+    res.send("PONG")
+  })
+
+
 app.use ('/products',productRoutes);
 app.use ('/orders',orderRoutes);
 app.use ('/user',userRoutes);
