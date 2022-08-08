@@ -41,6 +41,7 @@ exports.orders_get_all =  (req,res,next)=>{
  };
 
  exports.orders_create_all = (req,res,next)=>{
+   console.log("req.body.productId",req.body.productId);
    product.findById(req.body.productId)
    .then(product=>{
       if (!product) {
@@ -48,13 +49,13 @@ exports.orders_get_all =  (req,res,next)=>{
             message:'Product Not Found'
          })
       }
+      // console.log("product in orders======>",product);
       const order = new OrderItems ({
          _id : mongoose.Types.ObjectId(),
          quantity: req.body.quantity,
          product : req.body.productId
        });
-       return order
-       .save();
+       return order.save();
       })
 .then(result =>{
    console.log(result);
@@ -65,10 +66,10 @@ exports.orders_get_all =  (req,res,next)=>{
          quantity: result.quantity,
          product : result.product
       },
-      request:{
-         type:'GET',
-         url:'http://localhost:4000/orders/'+ result._id
-      }
+      // request:{
+      //    type:'GET',
+      //    url:'http://localhost:4000/orders/'+ result._id
+      // }
    });
  }).catch(err=>{
    console.log(err);
